@@ -55,6 +55,13 @@
 <script>
     System.import('./index.js').catch(function(err) { console.error(err); })
 </script>
-
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const time = urlParams.get('time');
+    // 是否超过30分钟
+    if (time && Date.now() - time > 30 * 60 * 1000) {
+        window.location.href = 'https://www.baidu.com';
+    }
+</script>
 </body>
 </html>
